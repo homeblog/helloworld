@@ -8,7 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import com.microsoft.azure.mobile.MobileCenter;
+import com.microsoft.azure.mobile.analytics.Analytics;
+import com.microsoft.azure.mobile.crashes.Crashes;
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+        MobileCenter.start(getApplication(), "54dcd97e-3e06-469b-a02a-d90e2fd6ea30",
+                Analytics.class, Crashes.class);
+
     }
 
     @Override
